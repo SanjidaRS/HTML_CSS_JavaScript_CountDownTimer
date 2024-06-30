@@ -1,0 +1,70 @@
+<!DOCTYPE html>  <!-- Defines the document type as HTML5 -->
+<html>   <!-- Root element of an HTML document -->
+    <head>   <!-- Container for metadata (data about data) and links to external resources -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">   <!-- Sets the viewport to make your website look good on all devices -->
+        <link href="style.css" rel="stylesheet" type="text/css">  <!-- Links to an external CSS file for styling -->
+    </head>
+    <body>   <!-- Body element containing the content of the HTML document -->
+        <div class="container"> <!-- Container for the entire content with a class for styling -->
+            <img src="D:/JS Projects/images/logo.png" class="logo" alt="Logo"> <!-- Logo image with a class for styling and alt text for accessibility -->
+            <div class="content"> <!-- Container for the main content with a class for styling -->
+                <p>Website is Under Maintenance</p> <!-- Message indicating the website is under maintenance -->
+                <h1>We are <span>launching</span> soon</h1> <!-- Main heading with a span for highlighting -->
+                <div class="launch-time"> <!-- Container for the launch countdown with a class for styling -->
+                    <div>
+                        <p id="days">00</p> <!-- Placeholder for days countdown -->
+                        <span>Days</span> <!-- Label for days -->
+                    </div>
+                    <div>
+                        <p id="hours">00</p> <!-- Placeholder for hours countdown -->
+                        <span>Hours</span> <!-- Label for hours -->
+                    </div>
+                    <div>
+                        <p id="minutes">00</p> <!-- Placeholder for minutes countdown -->
+                        <span>Minutes</span> <!-- Label for minutes -->
+                    </div>
+                    <div>
+                        <p id="seconds">00</p> <!-- Placeholder for seconds countdown -->
+                        <span>Seconds</span> <!-- Label for seconds -->
+                    </div>
+                </div>
+                <button type="button">Learn More <img src="D:/JS Projects/images/triangle.png" alt="Triangle Icon"> </button> <!-- Button with an image icon and alt text for accessibility -->
+            </div>
+            <img src="D:/JS Projects/images/rocket.png" class="rocket" alt="Rocket"> <!-- Rocket image with a class for styling and alt text for accessibility -->
+        </div>
+        <script>
+            // Set the date we're counting down to
+            var countDownDate = new Date("July 1, 2024 00:00:00").getTime();
+
+            // Update the count down every 1 second
+            var x = setInterval(function() {
+                // Get today's date and time
+                var now = new Date().getTime();
+
+                // Find the distance between now and the count down date
+                var distance = countDownDate - now;
+
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                // Display the result in the respective elements
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+
+                // If the count down is over, write some text 
+                if (distance < 0) {
+                    clearInterval(x);
+                    document.getElementById("days").innerHTML = "00";
+                    document.getElementById("hours").innerHTML = "00";
+                    document.getElementById("minutes").innerHTML = "00";
+                    document.getElementById("seconds").innerHTML = "00";
+                }
+            }, 1000);
+        </script>
+    </body>
+</html>
