@@ -7,9 +7,11 @@ This is a simple countdown timer website that displays the time remaining until 
 ## Project Structure
 
 The project consists of the following files and directories:
+
 ├── index.html # The main HTML file
 
 ├── style.css # The CSS file for styling the webpage
+
 ├── images # Directory containing image assets
 
 │ ├── logo.png
