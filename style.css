@@ -10,7 +10,8 @@
 .container {
     width: 100vw;
     height: 100vh;
-    background-image: url("/background.png");
+    background-color: blueviolet;
+    background-image: url('background.png');
     background-position: center;
     background-size: cover;
     padding: 0 8%;
